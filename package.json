@@ -1,11 +1,19 @@
 {
   "name": "lightning-histogram",
   "version": "0.0.0",
+  "scripts": {
+    "compile": "jsx src lib",
+    "watch": "jsx -w src lib"
+  },
   "dependencies": {
+    "brfs": "^1.4.0",
+    "d3": "^3.5.6",
+    "d3-scale": "^0.1.1",
     "lightning-client-utils": "^0.6.3",
     "lightning-visualization": "^0.1.0",
     "lodash": "^3.8.0",
-    "brfs": "^1.4.0"
+    "react": "^0.13.3",
+    "svg-path-generator": "^1.1.0"
   },
   "keywords": [
     "lightning-visualization"
@@ -19,6 +27,9 @@
     ]
   },
   "lightning": {
-    "name": "lightning-histogram"
+    "name": "histogram"
+  },
+  "devDependencies": {
+    "react-tools": "^0.13.3"
   }
 }
