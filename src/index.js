@@ -14,7 +14,7 @@ var Visualization = LightningVisualization.extend({
     },
 
     render: function() {
-        React.render((<Histogram values={this.data.values} width={this.width} height={this.height} />), this.el);
+        React.render((<Histogram bins={this.data.bins} values={this.data.values} width={this.width} height={this.height} />), this.el);
     },
 
     formatData: function(data) {
