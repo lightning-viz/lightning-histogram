@@ -3,11 +3,14 @@ var AxisWrapper = require('./axis-wrapper');
 var Canvas = require('./canvas');
 var _ = require('lodash');
 var React = require('react');
+var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 var utils = require('lightning-client-utils');
 var d3 = require('d3');
 
 
 var Histogram = React.createClass({
+
+    mixins: [PureRenderMixin],
 
     getDefaultProps: function() {
         return {
@@ -48,8 +51,6 @@ var Histogram = React.createClass({
         var scaleY = this.scaleY();
         var color = utils.getColors(3)[1];
 
-        console.log('drawNodes');
-
         var x, y, height;
         var width = scaleX(this.state.histData[0].x + this.state.histData[0].dx) - scaleX(this.state.histData[0].x);
         return _.map(this.state.histData, function(d, i) {
@@ -65,15 +66,10 @@ var Histogram = React.createClass({
         var bins = Math.round(this.state.initialBins * zoom.scale);
         var histData = d3.layout.histogram().bins(bins)(this.props.values);
 
-        console.log(bins);
-
         this.setState({
             bins: bins,
             histData: histData
         });
-
-        // this.forceUpdate();
-
     },
 
     getTicks: function() {
