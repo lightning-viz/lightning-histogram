@@ -76,9 +76,13 @@ var Histogram = React.createClass({
 
     },
 
+    getTicks: function() {
+        return Math.min(this.props.width / 25, this.state.bins);
+    },
+
     render: function() {
         return (
-            <AxisWrapper width={this.props.width} height={this.props.height} scale={this.scaleX()} ticks={this.state.bins} innerTickSize={0} onZoomed={this.handleZoom} >
+            <AxisWrapper width={this.props.width} height={this.props.height} scale={this.scaleX()} ticks={this.getTicks()} innerTickSize={0} onZoomed={this.handleZoom} >
                 <Canvas ref="canvas">
                     {this.drawNodes()}
                 </Canvas>

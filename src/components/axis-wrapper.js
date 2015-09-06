@@ -37,8 +37,8 @@ var AxisWrapper = React.createClass({
         return (<Axis
             orientation={this.props.position}
             scale={this.props.scale}
-            width={this.getInnerWidth()}
-            height={this.getInnerHeight()}
+            width={this.props.width}
+            height={this.props.height}
             margin={this.props.margin} 
             innerTickSize={-this.getInnerHeight()}
             ticks={this.props.ticks}
@@ -59,7 +59,7 @@ var AxisWrapper = React.createClass({
         }, this);
 
         return (
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative', width: this.props.width, height: this.props.height}}>
                 <svg width={this.props.width} height={this.props.height} style={{position: 'absolute'}} ref={'svg'}>
                     {this.axis()}
                 </svg>
