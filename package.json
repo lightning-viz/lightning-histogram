@@ -1,6 +1,6 @@
 {
   "name": "lightning-histogram",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "compile": "jsx src lib",
     "watch": "jsx -w src lib"
