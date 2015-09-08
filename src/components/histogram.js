@@ -69,6 +69,11 @@ var Histogram = React.createClass({
         }
 
         var bins = Math.round(this.state.initialBins * zoom.scale);
+        bins = Math.min(Math.max(1, bins), 250);
+
+        if(bins === this.state.bins) {
+            return;
+        }
         var histData = d3.layout.histogram().bins(bins)(this.props.values);
 
         this.setState({
