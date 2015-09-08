@@ -1,5 +1,5 @@
 from lightning import Lightning
-from numpy import random, ceil, array
+from numpy import random
 
 lgn = Lightning()
 
