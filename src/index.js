@@ -32,7 +32,7 @@ var Visualization = LightningVisualization.extend({
     },
 
     appendData: function(formattedData) {
-        this.data.values = this.data.points.concat(formattedData.values);
+        this.data.values = this.data.values.concat(formattedData.values);
         this.render();
     }
 
